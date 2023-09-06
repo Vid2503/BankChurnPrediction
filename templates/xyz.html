@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOMERCHURNPREDICTION</title>
+</head>
+<style>
+            */ html {
+            box-sizing: border-box;
+            line-height: 1.15;
+            /* 1 */
+            -webkit-text-size-adjust: 100%;
+            /* 2 */
+        }
+
+        body {
+            margin: 15px 20px;
+            background-color: rgba(119, 149, 206, 0.797);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 19px;
+        padding: 6px;
+    
+    }
+            h1{
+                text-align: center;
+                font-size: xx-large;
+            font-family:Arial, Helvetica, sans-serif;
+        color: beige;}
+        .container{  
+            text-align: center;
+            font-size: larger;
+        }
+        .creditscore{
+            margin: 8px 8px;
+        }
+        .button{
+            background-color: teal;
+            margin: 13px 10px;
+            color: beige;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size:larger;
+        }
+        .button:hover{
+            color: black;
+            cursor: pointer;
+        }
+        input[type="number"],select,textarea{
+            padding: 8px;
+            border-radius: 4px;
+        }
+        h2{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: larger;
+        }
+        #geography{
+            margin: 5px 5px;
+            font-size: large;
+        }
+            </style>
+<body>
+    <h1>Enter Customer's Details Here:</h1><br>
+    <form action='/predict' method="POST"class="container">
+        Enter your creditscore here: <input type="number"name="creditscore"class="creditscore" required><br>
+        Enter your age here: <input type="number" name="age" id="age"class="creditscore"required><br>
+        Enter your tenure here:<input type="number"name="tenure"class="creditscore"required><br>
+        Enter your balance here:<input type="number"name="balance"class="creditscore"required><br>
+        Enter no of products <input type="number"name='no'class="creditscore"required><br>
+        Do you have a credit card?<input type="number"name='cc'class="creditscore"required><br>
+        Are you a active member? <input type="number"name="active"class="creditscore"required><br>
+        Your estimated salary:<input type="number"name="salary"class="creditscore"required><br>
+        Select your geography <select name="geography" id="geography">
+            <option value="france">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Spain">Spain</option>
+        </select>
+        <div>
+            <input type="submit"class="button">
+        </div>
+    </form>
+    <h2>{{pred}}</h2>
+</body>
+</html>
